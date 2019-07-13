@@ -1,11 +1,12 @@
+
 #xxx{
-  background: white;
+  background: #F5F6F7;
   display: block;
 }
+
 body{
   margin: 0px;
-}
-html{
+ overflow: hidden;
 }
 .actions{
   position：fixed;
@@ -18,9 +19,8 @@ html{
 .actions.x > #brush{
   display: inline-block;
 }
-.actions.x > #eraser{ display: none;
+.actions.x > #eraser{ 
+  display: none;
 }
-  canvas {
-   display: block;
-}
+  
 
