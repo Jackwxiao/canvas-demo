@@ -1,151 +1,151 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>画板</title>
-		<link rel="stylesheet" href="./style.css">
-		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 
-	</head>
-	<body>
-		<canvas id="xxx" width="300" height="300" ></canvas>
-			<div id="actions" class="actions">
-			<button id=eraser>橡皮檫</button>
-			<button id=brush>画笔</button>
-			</div>
+<head>
+	<meta charset="utf-8">
+	<title>画板</title>
+	<link rel="stylesheet" href="./style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
 
-	<script>
-        var yyy = document.getElementById('xxx');
-        var context = yyy.getContext('2d');
+<body>
+	<canvas id="xxx" width=300 height=300></canvas>
+	<div id="actions" class="actions">
+		<button id=eraser>橡皮檫</button>
+		<button id=brush>画笔</button>
+	</div>
 
-      autoSetCanvasSize(yyy)
+</body>
+<script>
+	var yyy = document.getElementById('xxx');
+	var context = yyy.getContext('2d');
 
-      listenToUser(yyy)
+	autoSetCanvasSize(yyy)
 
-       var eraserEnabled = false
-      eraser.onclick = function(){
-	eraserEnabled=true
-	actions.className = 'actions x'
-}
-      brush.onclick= function(){
-	eraserEnabled = false
-	actions.className = 'actions'
-}
+	listenToUser(yyy)
 
+	var eraserEnabled = false
+	eraser.onclick = function () {
+		eraserEnabled = true
+		actions.className = 'actions x'
+	}
+	brush.onclick = function () {
+		eraserEnabled = false
+		actions.className = 'actions'
+	}
 
-function autoSetCanvasSize(canvas){
-	setCanvasSize()
-
-	window.onresize = function(){
+	function autoSetCanvasSize(canvas) {
 		setCanvasSize()
-	}
-function setCanvasSize(){
-		var pageWidth = document.documentElement.clientWidth
-		var pageHeight = document.documentElement.clientHeight
-		canvas.width = pageWidth
-		canvas.height = pageHeight
-	}
-}
 
-function drawCircle(x,y,radius){
-	context.beginPath()
-	context.fillStyle = 'black'
-	context.arc(x,y,radius,0,Math.PI*2);
-	context.fill()
-
-}
-
-function drawLine(x1,y1,x2,y2){
-	context.beginPath();
-	context.strokeStyle = 'black'
-	context.moveTo(x1,y1)
-	context.lineWidth = 5
-	context.lineTo(x2,y2)
-	context.stroke()
-	context.closePath()
-}
-
-function listenToUser(canvas){
-
-	var using = false
-	var lastPoint = {
-		x: undefined,
-		y: undefined
-	}
-	if(document.body.ontouchstart !== undefined) {
-		//触屏设备
-	 canvas.ontouchstart = function(aaa){
-		 var x = aaa.touches[0].clientX
-		 var y = aaa.touches[0].clientY
-		 using = true
-            if (eraserEnabled){
-		  context.clearRect(x-5,y-5,10,10)
-	    }else{
-	     lastPoint = {
-		"x": x,
-		"y": y
-			}
+		window.onresize = function () {
+			setCanvasSize()
 		}
-                      }
-		canvas.ontouchmove = function(aaa){
-              
-			var x = aaa.touches[0].clientX
-			var y = aaa.touches[0].clientY
-			if(!using){return}
-			if(eraserEnabled){
-				context.clearRect(x-5,y-5,10,10)
-			}else{
-				var newPoint = {
-					"x": x,
-					"y": y
-				}
-			drawLine(lastPoint.x,lastPoint.y,newPoint.x,newPoint.y)
-				lastPoint = newPoint
-			}
-
-
+		function setCanvasSize() {
+			var pageWidth = document.documentElement.clientWidth
+			var pageHeight = document.documentElement.clientHeight
+			canvas.width = pageWidth
+			canvas.height = pageHeight
 		}
-		canvas.ontouchend = function(){
-                        using = false
+	}
 
+	function drawCircle(x, y, radius) {
+		context.beginPath()
+		context.fillStyle = 'black'
+		context.arc(x, y, radius, 0, Math.PI * 2);
+		context.fill()
+
+	}
+
+	function drawLine(x1, y1, x2, y2) {
+		context.beginPath();
+		context.strokeStyle = 'black'
+		context.moveTo(x1, y1)
+		context.lineWidth = 5
+		context.lineTo(x2, y2)
+		context.stroke()
+		context.closePath()
+	}
+
+	function listenToUser(canvas) {
+
+		var using = false
+		var lastPoint = {
+			x: undefined,
+			y: undefined
 		}
-	}else {
-		//非触屏设备
-		canvas.onmousedown = function(aaa){
-			var x = aaa.clientX
-			var y = aaa.clientY
-			using = true
-			if (eraserEnabled){
-				context.clearRect(x-5,y-5,10,10)
-			}else{
-				lastPoint = {
-					"x": x,
-					"y": y
+		if (document.body.ontouchstart !== undefined) {
+			//触屏设备
+			canvas.ontouchstart = function (aaa) {
+				var x = aaa.touches[0].clientX
+				var y = aaa.touches[0].clientY
+				using = true
+				if (eraserEnabled) {
+					context.clearRect(x - 5, y - 5, 10, 10)
+				} else {
+					lastPoint = {
+						"x": x,
+						"y": y
+					}
 				}
 			}
-		}
-		canvas.onmousemove = function(aaa){
-			var x = aaa.clientX
-			var y = aaa.clientY
-			if(!using){return}
-			if(eraserEnabled){
-				context.clearRect(x-5,y-5,10,10)
-			}else{
-				var newPoint = {
-					"x": x,
-					"y": y
+			canvas.ontouchmove = function (aaa) {
+
+				var x = aaa.touches[0].clientX
+				var y = aaa.touches[0].clientY
+				if (!using) { return }
+				if (eraserEnabled) {
+					context.clearRect(x - 5, y - 5, 10, 10)
+				} else {
+					var newPoint = {
+						"x": x,
+						"y": y
+					}
+					drawLine(lastPoint.x, lastPoint.y, newPoint.x, newPoint.y)
+					lastPoint = newPoint
 				}
-			drawLine(lastPoint.x,lastPoint.y,newPoint.x,newPoint.y)
-				lastPoint = newPoint
+
+
+			}
+			canvas.ontouchend = function () {
+				using = false
+
+			}
+		} else {
+			//非触屏设备
+			canvas.onmousedown = function (aaa) {
+				var x = aaa.clientX
+				var y = aaa.clientY
+				using = true
+				if (eraserEnabled) {
+					context.clearRect(x - 5, y - 5, 10, 10)
+				} else {
+					lastPoint = {
+						"x": x,
+						"y": y
+					}
+				}
+			}
+			canvas.onmousemove = function (aaa) {
+				var x = aaa.clientX
+				var y = aaa.clientY
+				if (!using) { return }
+				if (eraserEnabled) {
+					context.clearRect(x - 5, y - 5, 10, 10)
+				} else {
+					var newPoint = {
+						"x": x,
+						"y": y
+					}
+					drawLine(lastPoint.x, lastPoint.y, newPoint.x, newPoint.y)
+					lastPoint = newPoint
+				}
+			}
+			canvas.onmouseup = function (aaa) {
+				using = false
 			}
 		}
-		canvas.onmouseup = function(aaa){
-			using = false
-		}
-	}
 
-}
-		</script>
-	</body>
+	}
+</script>
 
 </html>

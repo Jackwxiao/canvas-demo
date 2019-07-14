@@ -3,15 +3,16 @@
   background: #F5F6F7;
   display: block;
 }
-
-body{
-  margin: 0px;
- 
+canvas{
+  display: block;
 }
-.actions{
-  position：fixed;
-  bottom: 0;
-  left: 0;
+body{
+  margin:0;
+}
+.actions {
+    position: fixed;
+    top: 0px;
+    left: 0px;
 }
 .actions > #brush{
   display: none;
