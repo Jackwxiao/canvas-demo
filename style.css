@@ -67,8 +67,8 @@ body{
 }
 .sizes {
   position: fixed;
-  right: 20px;
-  top: 0px;
+  right: 30px;
+  top: 10px;
 }
 .sizes > li{
   margin: 20px 0;
