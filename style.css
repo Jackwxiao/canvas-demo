@@ -14,6 +14,7 @@ ul,ol{list-style: none;}
 }
 canvas{
   display: block;
+  background: whitesmoke;
 }
 body{
   margin:0;
@@ -63,4 +64,27 @@ body{
 .colors > li.active{
   box-shadow: 0 0 3px rgba(0,0,0,0.95);
   transform: scale(1.2);
+}
+.sizes {
+  position: fixed;
+  right: 20px;
+  top: 0px;
+}
+.sizes > li{
+  margin: 20px 0;
+}
+.sizes > .thin{
+  height: 0;
+  width: 20px;
+  border-top: 1px solid black;
+}
+.sizes > .medium{
+  height: 0;
+  width: 20px;
+  border-top: 3px solid black;
+}
+.sizes > .thick{
+  height: 0;
+  width: 20px;
+  border-top: 6px solid black;
 }
