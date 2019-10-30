@@ -58,6 +58,15 @@ body{
 .colors > li.blue{
   background: blue;
 }
+.colors > li.purple{
+  background: purple;
+}
+.colors > li.yellow{
+  background: yellow;
+}
+.colors > li.orange{
+  background: orange;
+}
 .colors > li.black{
   background: black;
 }

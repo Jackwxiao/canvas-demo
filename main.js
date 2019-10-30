@@ -24,7 +24,10 @@
 		red.classList.add('active')
 		green.classList.remove('active')
 		blue.classList.remove('active')
-		black.classList.remove('active')
+        black.classList.remove('active')
+        orange.classList.remove('active')
+        yellow.classList.remove('active')
+        purple.classList.remove('active')
 	}
 	green.onclick = function(){
 		context.fillStyle = 'green'
@@ -32,7 +35,10 @@
 		green.classList.add('active')
 		red.classList.remove('active')
 		blue.classList.remove('active')
-		black.classList.remove('active')
+        black.classList.remove('active')
+        orange.classList.remove('active')
+        yellow.classList.remove('active')
+        purple.classList.remove('active')
 	}
 	blue.onclick = function(){
 		context.fillStyle = 'blue'
@@ -40,7 +46,10 @@
 		blue.classList.add('active')
 		green.classList.remove('active')
 		red.classList.remove('active')
-		black.classList.remove('active')
+        black.classList.remove('active')
+        orange.classList.remove('active')
+        yellow.classList.remove('active')
+        purple.classList.remove('active')
 	}
 	black.onclick = function(){
 		context.fillStyle = 'black'
@@ -48,8 +57,45 @@
 		black.classList.add('active')
 		green.classList.remove('active')
 		red.classList.remove('active')
-		blue.classList.remove('active')
-	}
+        blue.classList.remove('active')
+        orange.classList.remove('active')
+        yellow.classList.remove('active')
+        purple.classList.remove('active')
+    }
+    purple.onclick = function(){
+		context.fillStyle = 'purple'
+		context.strokeStyle = 'purple'
+		purple.classList.add('active')
+		green.classList.remove('active')
+		red.classList.remove('active')
+        black.classList.remove('active')
+        orange.classList.remove('active')
+        yellow.classList.remove('active')
+        blue.classList.remove('active')
+    }
+    yellow.onclick = function(){
+		context.fillStyle = 'yellow'
+		context.strokeStyle = 'yellow'
+		yellow.classList.add('active')
+		green.classList.remove('active')
+		red.classList.remove('active')
+        blue.classList.remove('active')
+        purple.classList.remove('active')
+        orange.classList.remove('active')
+        black.classList.remove('active')
+    }
+    orange.onclick = function(){
+		context.fillStyle = 'orange'
+		context.strokeStyle = 'orange'
+		orange.classList.add('active')
+		green.classList.remove('active')
+		red.classList.remove('active')
+        black.classList.remove('active')
+        purple.classList.remove('active')
+        yellow.classList.remove('active')
+        blue.classList.remove('active')
+    }
+    
     clear.onclick = function(){
         context.clearRect(0,0,yyy.width,yyy.height);
 	}
