@@ -9,9 +9,9 @@ ul,ol{list-style: none;}
   fill: currentColor;
   overflow: hidden;
 }
-#xxx{
+#myCanvas{
   display: block;
-  background: whitesmoke;
+  background: rgba(220, 230, 229, 0.342);
   position: fixed;
   top: 0;
   left: 0;

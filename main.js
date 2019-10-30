@@ -1,5 +1,5 @@
 
-	var yyy = document.getElementById('xxx');
+	var yyy = document.getElementById('myCanvas');
 	var context = yyy.getContext('2d');
 	var lineWidth = 1
 	
