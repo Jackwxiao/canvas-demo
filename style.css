@@ -11,18 +11,19 @@ ul,ol{list-style: none;}
 }
 #xxx{
   display: block;
-}
-canvas{
-  display: block;
   background: whitesmoke;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
-body{
-  margin:0;
-}
+/* body{
+  overflow: hidden;
+} */
+
 .actions {
     position: fixed;
-    top: 0px;
-    left: 0px;
+    top: 0;
+    left: 0;
     padding: 15px;
 }
 .actions svg{
@@ -68,10 +69,10 @@ body{
 .sizes {
   position: fixed;
   right: 30px;
-  top: 10px;
 }
 .sizes > li{
-  margin: 20px 0;
+  margin: 25px 0;
+  padding-bottom: 15px;
 }
 .sizes > .thin{
   height: 0;
@@ -82,9 +83,4 @@ body{
   height: 0;
   width: 20px;
   border-top: 3px solid black;
-}
-.sizes > .thick{
-  height: 0;
-  width: 20px;
-  border-top: 6px solid black;
 }

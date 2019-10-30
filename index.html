@@ -5,7 +5,7 @@
 	<link rel="stylesheet" href="./style.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script src="//at.alicdn.com/t/font_1293350_7yxzs9w0nu5.js"></script>
-    <title>画板</title>
+    <title>Drawing board</title>
 	<canvas id="xxx" width=300 height=300></canvas>
 	<div id="actions" class="actions">
 		<svg id=pen class="active icon">
@@ -30,9 +30,9 @@
 	<ol class="sizes">
 		<li id="thin" class="thin"></li>
 		<li id="medium" class="medium"></li>
-		<li id="thick" class="thick"></li>
 	</ol>
 <script>
+
 	var yyy = document.getElementById('xxx');
 	var context = yyy.getContext('2d');
 	var lineWidth = 1
@@ -102,9 +102,7 @@
 	medium.onclick = function(){
 		lineWidth = 5
 	}
-	thick.onclick = function(){
-		lineWidth = 10
-	}
+
 	function autoSetCanvasSize(canvas) {
 		setCanvasSize()
 
