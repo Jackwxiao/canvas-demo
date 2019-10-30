@@ -16,9 +16,9 @@ ul,ol{list-style: none;}
   top: 0;
   left: 0;
 }
-/* body{
+body{
   overflow: hidden;
-} */
+}
 
 .actions {
     position: fixed;
